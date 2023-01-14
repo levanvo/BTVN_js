@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // destructoring - object
+        const vo = {
+            name: "Văn Võ",
+            age: {
+                old: 22,
+                next_time: 23,
+            },
+            place_study: {
+                past: "cooking,hair cut,employed of company marketing(it's so short time)",
+                fact: "programmer and developer",
+            },
+        };
+        const {
+            name: okname,
+            age: {
+                old: year_old,
+                next_time: next_year,
+            },
+            place_study: {
+                past,
+                fact: currently,
+            },
+        } = vo;
+        console.log("================Tên: " + okname + "================Tuổi: " + year_old + "================Nghề: " + currently);
+        // destructoring - array
+        let su = [1.77, 32, 32.773, -4, 334343, 4, -4335, 9];
+        const [o, t, h, v, ...yo] = su;
+        console.log("Ít: " + o + "================Nhiều: " + yo);
+        // operator
+            // Shadow copy
+            const simple = {
+                name:"dũng",
+                age:44,
+                address:{
+                    s1:"Gà",
+                    s2:"Vịt",
+                },
+            };
+            const complex = {
+                ...simple,
+                age:55,
+            };
+            complex.address.s1="Sui";
+            console.log("Shadow copy: " + simple.address["s1"]);
+            console.log("Shadow copy: " + complex.address["s1"]);
+            // Deep copy
+            const simple2 = {
+                    name2: "dũng",
+                    age2: 44,
+                    address2: {
+                        s11: "Gà",
+                        s22: "Vịt",
+                    },
+                };
+                const complex2 = structuredClone(simple2);
+                complex2.address2.s11 = "Sui";
+                console.log("Deep copy: " + simple2.address2["s11"]);
+                console.log("Deep copy: " + complex2.address2["s11"]);
+    </script>
+</body>
+
+</html>
