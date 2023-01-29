@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lê Văn Võ</h1>
+    <script>
+        const click_myName=document.querySelector("h1");
+        click_myName.style.color="orange";
+        click_myName.style.textAlign="center";
+        document.querySelector("body").addEventListener("click",function(){
+            click_myName.style.color="red";
+        })
+    </script>
+</body>
+</html>
