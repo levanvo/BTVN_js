@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9 - Part1</title>
+</head>
+<body>
+    <script>
+        const game={
+            team1:"Lê Văn Võ",
+            team2:"Lê Văn Vũ",
+            player:[
+                player_1 = ["atity", "xuty", "archit", "franli", "summan", "panji", "nundo", "dio", "deamvi", "junro","chunho"],
+                player_2 = ["kato", "xwin", "endy", "jouten", "montak", "jijy", "goncho", "pounemen", "benco", "chaven","gongji"],
+            ],
+            score:"4:0",
+            scored:["Lewandowski","Gnarby","Hummels"],
+            odds:{
+                team1:6.50,//change it to win or lose
+                x:3.25,
+                team2:6.4,
+            },
+        };
+        const [players1,players2]=game.player;
+            console.log(players1,players2);
+        const [gk,...fieldPlayers]=players1;
+            console.log(gk,fieldPlayers);
+        const allPlayers=[...players1,...players2];
+            console.log(allPlayers);
+        const players1Final=[...players1,"Thiago","Coutiho","Periscic"];
+        const {odds:{team1,x:draw,team2}}=game;
+            console.log(team1,draw,team2);
+        const printGoal=function(...players){
+            console.log(players);
+            console.log(players.length+" Goal !!");
+        }
+        // printGoal("xuty", "archit", "franli", "summan", "panji");
+        // printGoal("xuty", "summan", "panji");
+        printGoal(...game.scored);
+        // let vo=team1<team2;
+        team1 < team2 && console.log(game.team1+" Win");
+        team1 > team2 && console.log(game.team2 + " Win");
+        team1 == team2 && console.log(game.team1 + " Draw " + game.team2);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

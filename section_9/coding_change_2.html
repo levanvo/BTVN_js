@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9 - Part 2</title>
+</head>
+
+<body>
+    <script>
+        const game = {
+            team1: "Lê Văn Võ",
+            team2: "Lê Văn Vũ",
+            player: [
+                player_1 = ["atity", "xuty", "archit", "franli", "summan", "panji", "nundo", "dio", "deamvi", "junro", "chunho"],
+                player_2 = ["kato", "xwin", "endy", "jouten", "montak", "jijy", "goncho", "pounemen", "benco", "chaven", "gongji"],
+            ],
+            score: "4:0",
+            scored: ["Lewandowski", "Gnarby", "Hummels"],
+            odds: {
+                team1: 6.50,//change it to win or lose
+                x: 3.25,
+                team2: 6.4,
+            },
+        };
+        const odds=Object.values(game.odds);
+        let aveage=0;
+        for([dem,player] of game.scored.entries()){
+            console.log(`Số ${dem} là: ${player}`);
+        }
+        for(const odd of odds){
+            aveage+=odd;
+        }
+        aveage/=odds.length;
+        console.log(aveage);
+        for(const[team,odd] of Object.entries(game.odds)){
+            const teamStr= team === "x"?"Draw":"Victory "+game[team];
+            console.log(`Odd of ${teamStr}  ${odd}`);
+        }
+    </script>
+</body>
+
+</html>
