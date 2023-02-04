@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const ok=function(get){
+            const got=get.map(age=>(age <=3 ? 2*age : age-10));
+
+            const go=got.filter(age=>age >18);
+            // console.log("got"+got);
+            // console.log(go);
+            const average=go.reduce((acc,age,i,arr)=>acc+age/arr.length,0);
+            return average;
+        }   
+        const s1=ok([26,5,8,1,7]);
+        const s2=ok([1,8,11,46,71]);
+        console.log(s1,s2);
+    </script>
+</body>
+</html>
