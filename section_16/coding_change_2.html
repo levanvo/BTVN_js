@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="image"></div>
+    <script>
+        const wait=function(seconds){
+            return new Promise(function(resolve,reject){
+                setTimeout(resolve,seconds*1000);
+            });
+        };
+        const imgContainer=document.querySelector(".image");
+        let currentImg;
+        const createImage=function (imgPath){
+            return new Promise(function(resolve,reject){
+                const img=document.createElement("img");
+                img.src=imgPath;
+
+                img.addEventListener("load",function(){
+                    imgContainer.append(img);
+                    resolve(img);
+                });
+
+                img.addEventListener("error", function () {
+                    reject(new Error("Image not found"));
+                });
+            });
+        };
+
+        createImage("https://img.lovepik.com/original_origin_pic/19/01/16/350cbb276f20c170b8eae8668ef5be64.png_wh860.png")
+        .then(img=>{
+            console.log("Image 1 loaded");
+            return wait(2);})
+        .then(()=>{
+            currentImg.style.display="none";
+            return createImage("https://img5.thuthuatphanmem.vn/uploads/2021/11/21/hinh-nen-cay-xanh-dep-nhat_103613238.jpg");})
+        .then(img => {
+            console.log("Image 2 loaded");
+            return wait(2);})
+        .then(()=>{
+            currentImg.style.display="none";})
+        .catch(err=>console.log(err));
+    </script>
+</body>
+</html>
