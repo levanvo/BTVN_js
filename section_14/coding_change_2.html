@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Carcl{
+            constructor(make,speed){
+                this.make = make;
+                this.speed = speed;
+            }
+            accelerate () {
+                this.speed += 10;
+                console.log(`${this.make} is going at ${this.speed} km/h`)
+            };
+            brake() {
+                this.speed += 10;
+                console.log(`${this.make} is going at ${this.speed} km/h`)
+            };
+            get speedUs(){
+                return this.speed/1.6;
+            }
+        }
+        const ford=new Carcl("Ford", 125);
+        console.log(ford.speedUs);
+        ford.accelerate();
+        ford.accelerate();
+        ford.brake();
+        ford.speed=50;
+        console.log(ford);
+    </script>
+</body>
+</html>

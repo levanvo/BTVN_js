@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const car=function(make,speed){
+            this.make=make;
+            this.speed=speed;
+        };
+        car.prototype.accelerate=function(){
+            this.speed+=10;
+            console.log(`${this.make} is going at ${this.speed} km/h`)
+        };
+        car.prototype.brake = function () {
+            this.speed -= 5;
+            console.log(`${this.make} is going at ${this.speed} km/h`)
+        };
+        const bnw=new car("BMW",130);
+        const mercedes = new car("Mercedes", 80);
+
+        // to up
+        bnw.accelerate();
+        bnw.accelerate();
+        // to down
+        bnw.brake();
+        bnw.brake();
+        bnw.brake();
+    </script>
+</body>
+</html>
